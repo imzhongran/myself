@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link rel='stylesheet' type='text/css' href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+
+	<script>
+		$(function () {	
+			var filterList = {	
+				init: function () {
+					$('#portfoliolist').mixitup({
+						targetSelector: '.portfolio',
+						filterSelector: '.filter',
+						effects: ['fade'],
+						onMixEnd: filterList.hoverEffect()
+					});						
+				},		
+				hoverEffect: function () {
+					$('#portfoliolist .portfolio').hover(
+						function () {
+							$(this).find('.label').stop().animate({bottom: 0}, 200);
+							$(this).find('img').stop().animate({top: -30}, 500);				
+						},
+						function () {
+							$(this).find('.label').stop().animate({bottom: -40}, 200);
+							$(this).find('img').stop().animate({top: 0}, 300);								
+						}		
+					);						
+				}
+			};	
+			filterList.init();	
+		});	
+	</script>
+</head>
+
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.png" alt=""></a>
+			</div>
+			<span class="menu"></span>
+			<div class="navigation">
+				<ul class="navig cl-effect-3" >
+					<li><a href="index.html">Home</a></li>
+					<li><a href="games.html">Games</a></li>
+					<li><a href="##">Blog</a></li>
+					<li><a href="##">Features</a></li>
+					<li><a href="##">Contact</a></li>
+				</ul>
+				<div class="search-bar">
+						<input type="text" placeholder="search" />
+						<input type="submit" value="" />
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="banner"></div>	
+	<div class="banner-bot">
+		<div class="container">
+			<h2>Hello!</h2>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore</p>
+			<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima</p>
+			<nav class="cl-effect-3"><a href="#">More</a></nav>
+		</div>
+	</div>
+	<div class="gallery">
+		<div class="container">
+			<h3>Gallery</h3>
+			<div class="gallery-top">
+				<ul id="filters" class="clearfix">
+					<li><span class="filter active" data-filter="app card icon logo web">1</span></li>
+					<li><span class="filter" data-filter="app">2</span></li>
+					<li><span class="filter" data-filter="card">3</span></li>
+					<li><span class="filter" data-filter="icon">4</span></li>
+				</ul>
+				<div id="portfoliolist">
+					<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="index.html" class="b-link-stripe b-animate-go  thickbox">
+						     <img src="images/pic1.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "> </h2>
+						  		</div></a>
+		                </div>
+					</div>				
+					<div class="portfolio icon mix_all" data-cat="icon" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="index.html" class="b-link-stripe b-animate-go  thickbox">
+						     <img src="images/pic2.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "> </h2>
+						  	 </div></a>
+		                </div>
+					</div>		
+					<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="index.html" class="b-link-stripe b-animate-go  thickbox">
+						     <img src="images/pic3.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "> </h2>
+						  	 </div></a>
+		                </div>
+					</div>				
+					<div class="portfolio logos mix_all" data-cat="logo" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="index.html" class="b-link-stripe b-animate-go  thickbox">
+						     <img src="images/pic4.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "> </h2>
+						  	 </div></a>
+		                </div>
+					</div>	
+					<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="index.html" class="b-link-stripe b-animate-go  thickbox">
+						     <img src="images/pic5.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "> </h2>
+						  	 </div></a>
+		                </div>
+					</div>			
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="video-serch">
+		<div class="container">
+			<div class="col-md-6 vid-col">
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy </p>
+				<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit.</p>
+				<div class="more">
+					<a href="#">See more videos</a>
+				</div>
+			</div> 
+			<div class="col-md-6 vid-coll">
+				<img src="images/vid-img.jpg" alt="">
+				<div class="play-but">
+					<a href="#small-dialog5" class="thickbox play-icon popup-with-zoom-anim"></a>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>	
+	</div>
+	<div class="what-new">
+		<div class="container">
+			<h3>What's new</h3>
+			<div class="blog-news">
+				<div class="blog-news-grid">
+					<div class="news-grid-left">
+						<h4>06</h4>
+						<small>of january 2015</small>
+					</div>
+					<div class="news-grid-right">
+						<h4>Claritas est etiam processus</h4>
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim </p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="blog-news-grid b_n_g">
+					<div class="news-grid-left">
+						<h4>28</h4>
+						<small>of january 2015</small>
+					</div>
+					<div class="news-grid-right">
+						<h4>Claritas est etiam processus</h4>
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim </p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="blog-news b_n">
+				<div class="blog-news-grid">
+					<div class="news-grid-left">
+						<h4>21</h4>
+						<small>of january 2015</small>
+					</div>
+					<div class="news-grid-right">
+						<h4>Claritas est etiam processus</h4>
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim </p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="blog-news-grid b_n_g">
+					<div class="news-grid-left">
+						<h4>05</h4>
+						<small>of january 2015</small>
+					</div>
+					<div class="news-grid-right">
+						<h4>Claritas est etiam processus</h4>
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim </p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="container">
+			<ul>
+				<li><i class="fa"></i></li>
+				<li><i class="fb"></i></li>
+				<li><i class="fc"></i></li>
+			</ul>
+		</div>	
+	</div>
+</body>
+</html>

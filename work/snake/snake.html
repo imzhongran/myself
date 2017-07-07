@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+	*{ margin: 0; padding: 0 }
+	#box{ width: 200px; height: 100px; background: gray; display: none; position: absolute; left: 45%; top: 50%; border-radius: 8px; text-align:center;}
+	p{ font-size: 20px; padding: 20px 5px;}
+	button{ padding: 5px 10px; }
+</style>
+<style>
+.center{ position:absolute; left:0; top:0; right:0; bottom:0; margin:auto;}
+</style>
+</head>
+<script>
+window.onload=function(){
+	var obox=document.getElementById('box');
+	var obtn=document.getElementById('btn');
+	var cvs=document.getElementById('cvs');
+	var ctx=cvs.getContext("2d");
+	var w=40;
+	var snakemove=0;    // 0↑  ↓1  2←  3→
+	var snake=[{x:1,y:10},{x:1,y:11},{x:1,y:12}]
+	var apple=[];
+	var timer;
+	var rx;
+	var ry;
+	
+	function draw() {
+		for(var i = 0; i < 20; i++){
+			for(var j = 0; j < 20; j++){
+				ctx.strokeRect(i*w,j*w,w,w);
+			}
+		}
+	}
+
+	function rapple(){
+		ctx.fillStyle='pink';
+		for (var i = 0; i < 1; i++) {
+			rx=Math.floor(Math.random()*20);
+			ry=Math.floor(Math.random()*20);
+			apple.push({x:rx,y:ry});
+			ctx.fillRect(apple[i].x*w,apple[i].y*w,w,w);
+		}
+	}
+
+	function drawapple(){
+		ctx.fillStyle='pink';
+		for (var i = 0; i < apple.length; i++) {
+			ctx.fillRect(apple[i].x*w,apple[i].y*w,w,w);
+		}
+	}
+
+	function drawSnake() {
+		ctx.fillStyle='orange';
+		for (var i =0; i < snake.length; i++) {
+			ctx.fillRect(snake[i].x*w,snake[i].y*w,w,w);
+		}
+	}
+	
+	function move(){		
+		for (var i = snake.length-1; i > 0; i--) {
+			snake[i].x=snake[i-1].x;
+			snake[i].y=snake[i-1].y;
+		}
+		
+		switch(snakemove){
+			case 0:snake[0].y--;break;
+			case 1:snake[0].y++;break;
+			case 2:snake[0].x--;break;
+			case 3:snake[0].x++;break;
+		}
+
+		for (var n = 1; n < snake.length; n++) {
+			if(snake[0].x==snake[n].x&&snake[0].y==snake[n].y){
+				obox.style.display='block';
+				clearInterval(timer);
+			}
+		}
+
+		for (var j = 0; j < apple.length; j++) {
+			if (snake[0].x==apple[j].x&&snake[0].y==apple[j].y) {
+				snake.push({x:apple[j].x,y:apple[j].y});
+				apple.splice(j,1);
+				rx=Math.floor(Math.random()*20);
+				ry=Math.floor(Math.random()*20);
+				apple.push({x:rx,y:ry});				
+			}
+		}
+		
+		if (snake[0].x<0 || snake[0].y<0 || snake[0].x>19 || snake[0].y>19) {
+			obox.style.display='block';
+			clearInterval(timer);					
+		}
+	}
+
+	draw();
+	drawSnake();
+	rapple();
+
+	function init(){
+		ctx.clearRect(0,0,cvs.width,cvs.height);
+		draw();		
+		drawSnake();
+		drawapple();
+		move();	
+								
+	}
+	
+	window.onkeydown=function(ev){
+		switch(ev.keyCode){
+			case 38:if(snakemove!=1)snakemove=0;break;
+			case 40:if(snakemove!=0)snakemove=1;break;
+			case 37:if(snakemove!=3)snakemove=2;break;
+			case 39:if(snakemove!=2)snakemove=3;break;
+		}		
+	}
+
+	obtn.onclick=function () {
+		obox.style.display='none';
+	}
+
+	timer=setInterval(init,150);
+
+}
+</script>
+<body>
+<canvas class="center" id="cvs" width="800" height="800">您的浏览器不支持canvas</canvas>
+<div id="box">
+	<p>game over</p>
+	<button id="btn">确定</button>
+</div>
+</body>
+</html>

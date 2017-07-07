@@ -1,0 +1,40 @@
+.header_t{ background-color: #1f272d; min-height: 0; border-radius: 0; height: 37px; border-bottom: 1px solid #39434a; margin-bottom:0;  }
+.header_t .nav > li > a{ padding-top: 5px; padding-bottom: 5px; }
+.header_b{ background-color: #283036; border-radius: 0; }
+.header_b .navbar-brand{ height: auto; padding: 10px 15px; }
+.header_b .navbar-right{ padding-top: 15px; }
+.header_b button{ padding: 20px 10px; }
+.header_b .bk{ background: url('../images/bk.png') no-repeat center 0; }
+.header_b i{ font-size: 20px; }
+.header_b .hb_img{ width: 145px; }
+.page1{ background-color: #f04949; padding-top: 200px; padding-bottom: 50px; color: #fff; }
+.page1 h1{ padding-top: 70px; padding-left: 20px; }
+.page1 p{ padding-top: 20px; padding-left: 20px; }
+.page2 .amazing{ text-align: center; padding: 80px 0; }
+.page2 .amazing h2{ color: #f04949; }
+.page2 .recent{ margin-bottom: 20px;}
+.page2 .recent .ac{ background-color: #f04949; color: #fff; }
+.page2 .pagination > li > a{ border: 1px solid #f04949; color: #696969; }
+.page2 .recent_wrap{ width: 262px; height: 230px; text-align: center; background-color: #ebebeb; color: #696969; border-radius: 5px; margin: 0 auto; display: block; margin-bottom: 100px;}
+.page2 .recent_wrap img{ margin-top: 5px; }
+.page2 .recent_wrap:hover{ background-color: #f04949; color: #fff; text-decoration: none; }
+.page3{ background: url('../images/tc 110.png') no-repeat 0 0 ; text-align: center; color: #fff;}
+.page3 .shadow{ background-color: rgba(0,0,0,0.6); padding: 80px 0; }
+.page3 .shadow p{ padding: 20px 0; }
+.page3 .shadow .btn{ background-color: transparent; border:1px solid #fff; }
+.page4{ padding: 75px 0; }
+.page4 .media_list{ margin-bottom: 70px; }
+.page4 .media-body{ padding-top: 10px; padding-left: 5px; }
+.page4 .p4_title h4{ color: #f04949; }
+.page4 .news{ margin: 20px 0; }
+.page4 .service{ margin-top: 20px; }
+.page5{ background-color: #f04949; padding: 50px 0; }
+.page5 .team{ text-align: center; color: #fff; }
+.page5 .team img{ width: 210px; height: 210px; }
+.page5 .team p{ margin: 20px 150px 50px 150px; }
+.page5 .carousel-indicators{ top: 0; left: 95%; }
+.page5 ol li{ width: 13px; height: 13px; }
+.page5 ol .active{ width: 14px; height: 14px; }
+.page6{ text-align: center; padding: 80px 0; background-color: #283036; color: #fff; }
+.page6 img{ margin-bottom: 40px; }
+.page6 h5{ padding: 5px 0; }
